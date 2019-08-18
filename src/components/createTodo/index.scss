@@ -1,0 +1,75 @@
+@mixin test() {
+    padding: 3px;
+    margin: 0 !important;
+    border: 1px gray solid;
+    border-radius: 100%;
+}
+
+#expander {
+    @include test();
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "faDumbbell faRunning faHeart"
+    "faImage faBell faEnvelope"
+    "faCoffee faSchool faLaptop"
+    "faShareAltSquare faVideo faStar";
+    justify-content: center;
+    justify-items: center;
+}
+
+.faRunning {
+    grid-area: faRunning;
+}
+
+.faDumbbell {
+    grid-area: faDumbbell;
+}
+
+.faHeart {
+    grid-area: faHeart;
+}
+
+.faImage {
+    grid-area: faImage;
+}
+
+.faBell {
+    grid-area: faBell;
+}
+
+.faEnvelope {
+    grid-area: faEnvelope;
+}
+
+.faCoffee {
+    grid-area: faCoffee;
+}
+
+.faSchool {
+    grid-area: faSchool;
+}
+
+.faLaptop {
+    grid-area: faLaptop;
+}
+
+.faShareAltSquare {
+    grid-area: faShareAltSquare;
+}
+
+.faVideo {
+    grid-area: faVideo;
+}
+
+.faStar {
+    grid-area: faStar;
+}

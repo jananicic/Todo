@@ -19,12 +19,10 @@ import {
 const Todos = ({todos}) => {
     return (
         <ul>
-            <FontAwesomeIcon icon={faCoffee} size="3x"/>
             {todos.map(el => (
                 <li key={el.id}>
-                    <FontAwesomeIcon icon={el.icon} size="3x"/>
                     id: {el.id},
-                    icon: <FontAwesomeIcon icon={el.icon}/>,
+                    icon: <FontAwesomeIcon icon={el.icon} size="1x"/>,
                     category: {el.category},
                     text: {el.text},
                     location: {el.location},
