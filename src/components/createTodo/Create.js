@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {addTodo} from '../../js/actions';
 import Icons from './Icons'
+import 'materialize-css/dist/css/materialize.min.css'
+import 'materialize-css/dist/js/materialize.min.js'
 
 class Create extends Component {
     constructor(props) {
@@ -67,22 +69,32 @@ class Create extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 <Icons icon={this.state.icon} setIcon={this.setIcon}/>
-                <div id="categories">
-                    <select name="category" onChange={this.handleChange}>
+                <div className="input-field" id="categories">
+                    <select onChange={this.handleChange}>
                         <option value="Business">Business</option>
                         <option value="Personal">Personal</option>
                         <option value="Family">Family</option>
                         <option value="Work">Work</option>
                         <option value="School">School</option>
+                        <label>Materialize Select</label>
                     </select>
                 </div>
-                <input id="text" name="text" onChange={this.handleChange}/>
-                <input id="location" name="location" onChange={this.handleChange}/>
-                <input id="date" name="date" onChange={this.handleChange}/>
-                <button onClick={this.setTodo}>Create!</button>
-            </div>
+                <div id="text" className="input-field">
+                    <input type="text" onChange={this.handleChange}/>
+                    <label htmlFor="text">Text</label>
+                </div>
+                <div id="location" className="input-field">
+                    <input type="text" onChange={this.handleChange}/>
+                    <label htmlFor="location">Location</label>
+                </div>
+                <div id="date" className="input-field">
+                    <input type="text" onChange={this.handleChange}/>
+                    <label htmlFor="date">Date</label>
+                </div>
+                <button className="btn yellow black-text" onClick={this.setTodo}>Create!</button>
+            </>
         );
     }
 }

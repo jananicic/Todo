@@ -54,11 +54,11 @@ class Icons extends Component {
 
         return (
             <>
-                <div onClick={this.showIcons} id="expander">
-                    <FontAwesomeIcon icon={icon} size="2x"/>
-                </div>
                 <div id="icons">
                     {this.state.open ? icons.map((el, index) => (<Icon icon={el} iconClass={iconsClass[index]} setIcon={setIcon}/>)) : null}
+                </div>
+                <div onClick={this.showIcons} id="expander">
+                    <FontAwesomeIcon icon={icon} size="2x"/>
                 </div>
             </>
         );

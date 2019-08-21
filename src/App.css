@@ -1,14 +1,33 @@
+html, body {
+    color: white;
+    background: black;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
 .App {
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
-    grid-template-areas: "todos create";
+    grid-template-areas: "create todos";
+    align-items: center;
 }
 
 .todos {
+    display: grid;
     grid-area: todos;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .create {
+    display: grid;
     grid-area: create;
+    justify-items: center;
+    align-items: center;
 }

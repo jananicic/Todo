@@ -1,75 +1,107 @@
-@mixin test() {
-    padding: 3px;
-    margin: 0 !important;
-    border: 1px gray solid;
-    border-radius: 100%;
+@mixin input() {
+  input {
+    color: white;
+    &:focus:not([readonly]) {
+      border-bottom: 1px solid yellow;
+      box-shadow: 0 1px 0 0 yellow;
+    }
+  }
+  label.active {
+    color: yellow;
+  }
 }
 
 #expander {
-    @include test();
-    width: 50px;
-    height: 50px;
-    display: grid;
-    align-items: center;
-    justify-items: center;
+  margin: 0 !important;
+  border: 2px yellow solid;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  svg {
+    padding: 2px;
+  }
 }
 
 #icons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "faDumbbell faRunning faHeart"
-    "faImage faBell faEnvelope"
-    "faCoffee faSchool faLaptop"
-    "faShareAltSquare faVideo faStar";
-    justify-content: center;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "faDumbbell faRunning faHeart" "faImage faBell faEnvelope" "faCoffee faSchool faLaptop" "faShareAltSquare faVideo faStar";
+  justify-content: center;
+  justify-items: center;
+  margin: 10px;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  div {
+    padding: 10px;
+    &:hover {
+      color: yellow;
+    }
+  }
+}
+
+#categories {
+}
+
+#text {
+  @include input();
+}
+
+#location {
+  @include input();
+}
+
+#date {
+  @include input();
 }
 
 .faRunning {
-    grid-area: faRunning;
+  grid-area: faRunning;
 }
 
 .faDumbbell {
-    grid-area: faDumbbell;
+  grid-area: faDumbbell;
 }
 
 .faHeart {
-    grid-area: faHeart;
+  grid-area: faHeart;
 }
 
 .faImage {
-    grid-area: faImage;
+  grid-area: faImage;
 }
 
 .faBell {
-    grid-area: faBell;
+  grid-area: faBell;
 }
 
 .faEnvelope {
-    grid-area: faEnvelope;
+  grid-area: faEnvelope;
 }
 
 .faCoffee {
-    grid-area: faCoffee;
+  grid-area: faCoffee;
 }
 
 .faSchool {
-    grid-area: faSchool;
+  grid-area: faSchool;
 }
 
 .faLaptop {
-    grid-area: faLaptop;
+  grid-area: faLaptop;
 }
 
 .faShareAltSquare {
-    grid-area: faShareAltSquare;
+  grid-area: faShareAltSquare;
 }
 
 .faVideo {
-    grid-area: faVideo;
+  grid-area: faVideo;
 }
 
 .faStar {
-    grid-area: faStar;
+  grid-area: faStar;
 }
