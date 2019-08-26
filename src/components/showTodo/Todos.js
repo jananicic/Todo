@@ -1,20 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {
-    faRunning,
-    faDumbbell,
-    faHeart,
-    faImage,
-    faBell,
-    faEnvelope,
-    faCoffee,
-    faSchool,
-    faLaptop,
-    faShareAltSquare,
-    faVideo,
-    faStar
-} from '@fortawesome/free-solid-svg-icons'
 
 const Todos = ({todos}) => {
     return (

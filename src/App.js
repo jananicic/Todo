@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import Todos from './components/showTodo/Todos';
 import Create from './components/createTodo/Create'
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
     return (
         <div className="App">
-            <div className="todos">
-                <Todos/>
-            </div>
+            <Navbar/>
             <div className="create">
                 <Create />
             </div>

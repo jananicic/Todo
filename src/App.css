@@ -11,10 +11,14 @@ html, body {
 .App {
     display: grid;
     height: 100%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
-    grid-template-areas: "create todos";
+    grid-template-areas: "navbar create";
     align-items: center;
+}
+
+#navbar {
+    grid-area: navbar;
 }
 
 .todos {
