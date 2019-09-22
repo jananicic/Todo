@@ -1,19 +1,32 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {addTodo} from '../../js/actions';
-import Icons from './Icons'
-import 'materialize-css/dist/css/materialize.min.css'
-import 'materialize-css/dist/js/materialize.min.js'
+import Icons from './Icons';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize.min.js';
+
 
 class Create extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             icon: '',
-            category: 'Business',
-            text: '',
-            location: '',
-            date: null
+            title: '',
+            todos: [{
+                text: 'pomesti pod',
+                note: '',
+                completed: false
+            }, {
+                text: 'oprati sude',
+                note: '',
+                completed: true
+            }, {
+                text: 'oprati wc',
+                note: 'oprati wc skoljku i umivaonik u kupaonici',
+                completed: false
+            }],
+            completed: false
         };
         // good way to bind methods
         //this.updateInput = this.updateInput.bind(this)
@@ -70,34 +83,22 @@ class Create extends Component {
     render() {
         return (
             <>
-                <Icons icon={this.state.icon} setIcon={this.setIcon}/>
-                <div className="input-field" id="categories">
-                    <select onChange={this.handleChange}>
-                        <option value="Business">Business</option>
-                        <option value="Personal">Personal</option>
-                        <option value="Family">Family</option>
-                        <option value="Work">Work</option>
-                        <option value="School">School</option>
-                        <label>Materialize Select</label>
-                    </select>
+                <div>
+                    <Icons icon={this.state.icon} setIcon={this.setIcon}/>
+                    <div id="title" className="input-field">
+                        <input type="text" onChange={this.handleChange}/>
+                        <label htmlFor="text">Title</label>
+                    </div>
+                    <button className="btn yellow black-text" onClick={this.setTodo}>Create new todo group!</button>
                 </div>
-                <div id="text" className="input-field">
-                    <input type="text" onChange={this.handleChange}/>
-                    <label htmlFor="text">Text</label>
+                <div>
+
                 </div>
-                <div id="location" className="input-field">
-                    <input type="text" onChange={this.handleChange}/>
-                    <label htmlFor="location">Location</label>
-                </div>
-                <div id="date" className="input-field">
-                    <input type="text" onChange={this.handleChange}/>
-                    <label htmlFor="date">Date</label>
-                </div>
-                <button className="btn yellow black-text" onClick={this.setTodo}>Create!</button>
             </>
         );
     }
 }
+
 
 const mapDispatchToProps = dispatch => {
     return {

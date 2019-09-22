@@ -4,21 +4,60 @@ const initialState = {
     todos: [
         {
             id: '6al4s16w9',
-            icon: 'faBell',
-            category: 'School',
-            text: 'dummy text 1',
-            location: 'Zagreb',
-            date: Date.now(),
-            completed: true
+            icon: 'check_circle',
+            title: 'Spremanje',
+            todos: [{
+                text: 'pomesti pod',
+                note: '',
+                completed: false
+            }, {
+                text: 'oprati sude',
+                note: '',
+                completed: true
+            }, {
+                text: 'oprati wc',
+                note: 'oprati wc skoljku i umivaonik u kupaonici.',
+                completed: false
+            }],
+            completed: false
         },
         {
-            id: 'yzbt18y3u',
-            icon: 'faCoffee',
-            category: 'Business',
-            text: 'dummy text 1',
-            location: 'Zagreb',
-            date: Date.now(),
+            id: '6rl6s19w9',
+            icon: 'work',
+            title: 'Ucenje',
+            todos: [{
+                text: 'React',
+                note: '',
+                completed: true
+            }, {
+                text: 'Angular CLI',
+                note: '',
+                completed: true
+            }, {
+                text: 'CSS Grid',
+                note: 'Ponoviti css grid kako nebi trebao koristit cheatsheet.',
+                completed: false
+            }],
             completed: false
+        },
+        {
+            id: '6cl5s16w9',
+            icon: 'work',
+            title: 'Amplexor properties tests',
+            todos: [{
+                text: 'dv16547',
+                note: 'prijaviti bug na koraku 17 u JIRi',
+                completed: true
+            }, {
+                text: 'dv17899',
+                note: 'popraviti bug na QCMP6 okolini',
+                completed: true
+            }, {
+                text: 'dv16767',
+                note: '',
+                completed: true
+            }],
+            completed: true
         }
     ]
 };

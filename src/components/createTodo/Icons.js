@@ -1,21 +1,5 @@
 import React, {Component} from 'react'
 import './index.scss'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {
-    faRunning,
-    faDumbbell,
-    faHeart,
-    faImage,
-    faBell,
-    faEnvelope,
-    faCoffee,
-    faSchool,
-    faLaptop,
-    faShareAltSquare,
-    faVideo,
-    faStar,
-    faPlus
-} from '@fortawesome/free-solid-svg-icons'
 import Icon from "./Icon";
 
 /**
@@ -48,19 +32,18 @@ class Icons extends Component {
 
     render() {
         let {icon, setIcon} = this.props;
-        let icons = [faRunning, faDumbbell, faHeart, faImage, faBell, faEnvelope, faCoffee, faSchool, faLaptop, faShareAltSquare, faVideo, faStar];
-        let iconsClass = ['faRunning', 'faDumbbell', 'faHeart', 'faImage', 'faBell', 'faEnvelope', 'faCoffee', 'faSchool', 'faLaptop', 'faShareAltSquare', 'faVideo', 'faStar'];
-        if(icon === '') icon = faPlus;
+        let icons = ['work', 'school', 'star', 'favorite', 'fastfood', 'check_circle'];
+        if(icon === '') icon = 'add';
 
         return (
-            <>
-                <div id="icons">
-                    {this.state.open ? icons.map((el, index) => (<Icon icon={el} iconClass={iconsClass[index]} setIcon={setIcon}/>)) : null}
-                </div>
+            <div id="iconsContainer">
                 <div onClick={this.showIcons} id="expander">
-                    <FontAwesomeIcon icon={icon} size="2x"/>
+                    <i className="small material-icons">{icon}</i>
                 </div>
-            </>
+                <div id="icons">
+                    {this.state.open && icons.map(el => (<Icon icon={el} setIcon={setIcon}/>))}
+                </div>
+            </div>
         );
     }
 }

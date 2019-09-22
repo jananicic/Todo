@@ -11,97 +11,40 @@
   }
 }
 
-#expander {
-  margin: 0 !important;
-  border: 2px yellow solid;
-  border-radius: 100%;
-  width: 50px;
-  height: 50px;
+#iconsContainer {
   display: grid;
+  grid-template-areas: "expander icons";
   align-items: center;
-  justify-items: center;
-  svg {
-    padding: 2px;
+  #expander {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-area: expander;
+    margin-bottom: 10px;
+    border: 2px yellow solid;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
   }
-}
-
-#icons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "faDumbbell faRunning faHeart" "faImage faBell faEnvelope" "faCoffee faSchool faLaptop" "faShareAltSquare faVideo faStar";
-  justify-content: center;
-  justify-items: center;
-  margin: 10px;
-  border: 1px solid yellow;
-  border-radius: 10px;
-  div {
-    padding: 10px;
-    &:hover {
-      color: yellow;
+  #icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    grid-area: icons;
+    margin: 10px;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    div {
+      padding: 10px;
+      &:hover {
+        color: yellow;
+      }
     }
   }
 }
 
-#categories {
-}
-
-#text {
+#title {
   @include input();
-}
-
-#location {
-  @include input();
-}
-
-#date {
-  @include input();
-}
-
-.faRunning {
-  grid-area: faRunning;
-}
-
-.faDumbbell {
-  grid-area: faDumbbell;
-}
-
-.faHeart {
-  grid-area: faHeart;
-}
-
-.faImage {
-  grid-area: faImage;
-}
-
-.faBell {
-  grid-area: faBell;
-}
-
-.faEnvelope {
-  grid-area: faEnvelope;
-}
-
-.faCoffee {
-  grid-area: faCoffee;
-}
-
-.faSchool {
-  grid-area: faSchool;
-}
-
-.faLaptop {
-  grid-area: faLaptop;
-}
-
-.faShareAltSquare {
-  grid-area: faShareAltSquare;
-}
-
-.faVideo {
-  grid-area: faVideo;
-}
-
-.faStar {
-  grid-area: faStar;
 }
