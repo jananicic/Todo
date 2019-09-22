@@ -1,0 +1,67 @@
+#navbar {
+  display: inline-grid;
+  height: 100%;
+  align-content: start;
+  padding: 15px;
+  border-right: 1px solid yellow;
+
+}
+
+.createBtn{
+  width: 100%;
+  background: black;
+  border-color: yellow;
+  color: white;
+  margin-bottom: 5px;
+  &:hover {
+    color: yellow;
+  }
+  &:focus {
+    background-color: black;
+  }
+}
+
+.material-icons{
+  padding: 5px;
+}
+
+.todoItem {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  grid-template-areas: "todoIcon todoTitle";
+}
+
+.todoItemTitle {
+  grid-area: todoTitle;
+  margin: 0 5px 0 5px;
+}
+
+.todoItemIcon {
+  grid-area: todoIcon;
+}
+.responsiveLayout {
+  display: grid;
+  width: 100%;
+}
+
+.todoBtn {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  grid-template-areas: "link icon";
+  border: 1px solid white;
+  color: white;
+  margin-bottom: 5px;
+  &:hover {
+    background: yellow;
+  }
+  p {
+    grid-area: link;
+    color: white;
+    margin: 0;
+  }
+  i {
+    grid-area: icon;
+  }
+}
