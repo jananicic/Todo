@@ -26,21 +26,21 @@
       font-family: 'Poppins', sans-serif;
       background: black;
       color: white;
-      border: yellow 2px solid;
+      border: #ffd86f 2px solid;
     }
   }
 
   #search {
     display: grid;
-    grid-template-columns: 0.8fr 0.2fr;
+    grid-template-columns: 0.9fr;
     border-bottom: white 2px solid;
-    border-image-source: linear-gradient(to right, yellow 2%, white 98%);
+    border-image-source: linear-gradient(to right, #ffd86f 2%, #fc6262 98%);
     border-image-slice: 1;
     padding: 2% 0;
     input {
       font-family: 'Poppins', sans-serif;
       font-size: 0.8em;
-      margin-left: 20%;
+      margin-left: 5%;
       outline: none !important;
       border: none;
       border-radius: 2px;
@@ -49,9 +49,6 @@
       &:focus {
         outline: none !important;
       }
-    }
-    i {
-      margin: auto 20%;
     }
   }
 }
@@ -113,8 +110,12 @@
     padding: 5px
   }
 
-  #search input {
-    margin-left: 0 !important;
+  #search {
+    grid-template-columns: 0.95fr !important;
+    input {
+      width: 100%;
+      margin-left: 0 !important;
+    }
   }
 }
 

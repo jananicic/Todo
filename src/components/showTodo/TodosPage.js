@@ -10,7 +10,8 @@ class TodosPage extends Component {
             toggleIndicatorActive: 'remove',
             toggleIndicatorDone: 'remove',
             showActive: true,
-            showDone: true
+            showDone: true,
+            search: ''
         }
     }
 
@@ -55,7 +56,20 @@ class TodosPage extends Component {
         this.setState(newState);
     };
 
+    onSearch = e => {
+      this.setState({
+          ...this.state,
+          search: e.target.value
+      })
+    };
+
     render() {
+        let filteredCreatedTodos = this.props.createdTodos.filter(todo => {
+           return (todo.title.toLowerCase().indexOf(this.state.search) !== -1);
+        });
+        let filteredDoneTodos = this.props.doneTodos.filter(todo => {
+            return (todo.title.toLowerCase().indexOf(this.state.search) !== -1);
+        });
         return (
             <>
                 <div className="todosNavbar">
@@ -63,8 +77,7 @@ class TodosPage extends Component {
                         <button>Create</button>
                     </div>
                     <div id="search">
-                        <input type="text" placeholder="Search..."/>
-                        <i className="tiny material-icons">search</i>
+                        <input type="text" placeholder="Search..." onChange={this.onSearch}/>
                     </div>
                 </div>
                 <div>
@@ -74,7 +87,7 @@ class TodosPage extends Component {
                             <i className="tiny material-icons">{this.state.toggleIndicatorActive}</i>
                         </div>
                         <div className="todos">
-                            {this.state.showActive && this.props.createdTodos.map(el => (
+                            {this.state.showActive && filteredCreatedTodos.map(el => (
                                 <TodoItem key={el.id} id={el.id} icon={el.icon} title={el.title}/>
                             ))}
                         </div>
@@ -85,7 +98,7 @@ class TodosPage extends Component {
                             <i className="tiny material-icons">{this.state.toggleIndicatorDone}</i>
                         </div>
                         <div className="todos">
-                            {this.state.showDone && this.props.doneTodos.map(el => (
+                            {this.state.showDone && filteredDoneTodos.map(el => (
                                 <TodoItem key={el.id} id={el.id} icon={el.icon} title={el.title}/>
                             ))}
                         </div>
