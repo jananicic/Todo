@@ -73,9 +73,9 @@ class TodosPage extends Component {
                             <p>Active</p>
                             <i className="tiny material-icons">{this.state.toggleIndicatorActive}</i>
                         </div>
-                        <div>
+                        <div className="todos">
                             {this.state.showActive && this.props.createdTodos.map(el => (
-                                <TodoItem key={el.id} icon={el.icon} title={el.title}/>
+                                <TodoItem key={el.id} id={el.id} icon={el.icon} title={el.title}/>
                             ))}
                         </div>
                     </div>
@@ -84,9 +84,9 @@ class TodosPage extends Component {
                             <p>Done</p>
                             <i className="tiny material-icons">{this.state.toggleIndicatorDone}</i>
                         </div>
-                        <div>
+                        <div className="todos">
                             {this.state.showDone && this.props.doneTodos.map(el => (
-                                <TodoItem key={el.id} icon={el.icon} title={el.title}/>
+                                <TodoItem key={el.id} id={el.id} icon={el.icon} title={el.title}/>
                             ))}
                         </div>
                     </div>
